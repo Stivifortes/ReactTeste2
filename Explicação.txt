@@ -1,0 +1,32 @@
+/* //ACTION -> DESCRIBE WHAT YOU WANT TO DO - return an Object
+const increment = () => {
+  return {
+    type: "INCREMENT",
+  };
+};
+const decrement = () => {
+  return {
+    type: "DECREMENT",
+  };
+};
+
+//REDUCER -> One Reducer is a STATE! It DESCRIBE HOW THE ACTION TRANSFORM THE STATE INTO ANOTHER STATE
+const counter = (state = 0, action) => {
+  switch (action.type) {
+    case "INCREMENT":
+      return state + 1;
+    case "DECREMENT":
+      return state - 1;
+  }
+};
+
+//STORE (Globalized State) - hold all the states of all your components
+let store = createStore(counter);
+
+//display
+store.subscribe(() => console.log(store.getState()));
+
+//DISPATCH -> EXECUTE ACTIONS. SEND THE ACTION TO THE REDUCER
+store.dispatch(increment());
+store.dispatch(decrement());
+store.dispatch(decrement()); */
